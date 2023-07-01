@@ -1,4 +1,4 @@
-# Scripts Repository
+# HansonXYZ Scripts
 
 This repository is a collection of the most useful scripts that are used on a day-to-day basis. 
 
