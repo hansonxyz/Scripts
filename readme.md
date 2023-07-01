@@ -12,6 +12,9 @@ This repository is a collection of the most useful scripts that are used on a da
 
 [**tmux_remote_persistent.sh**](https://github.com/hansonxyz/Scripts/blob/main/tmux_remote_persistent.sh): This script enables connection to a remote Linux system and initializes a tmux session. It provides resilience by automatically reconnecting to the tmux session in case the terminal is unexpectedly disconnected.
 
+[**multi_terminal.ps1**](https://github.com/hansonxyz/Scripts/blob/main/multi_terminal.ps1): A powershell script that starts windows terminal and creates multiple persistent terminals using wsl + [**tmux_remote_persistent.sh**](https://github.com/hansonxyz/Scripts/blob/main/tmux_remote_persistent.sh)
+
+
 ## License
 
 This project is licensed under the terms of the MIT license.
