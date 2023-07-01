@@ -1,8 +1,6 @@
 # Scripts Repository
 
-This repository, named "scripts", is a collection of the most useful shell, Python, and PHP scripts that are used on a day-to-day basis. These scripts are categorized in separate files and directories, each serving a different purpose in various programming environments. 
-
-These scripts are open-source and free to use under the MIT license.
+This repository is a collection of the most useful scripts that are used on a day-to-day basis. 
 
 ## Index 
 
