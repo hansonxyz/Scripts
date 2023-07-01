@@ -8,7 +8,7 @@ This repository is a collection of the most useful scripts that are used on a da
 
 2. **db.sh**: A handy tool designed for Laravel and WordPress projects that simplifies the interaction with MySQL databases directly from the shell.
 
-3. **encrypt_tar.sh**: This script generates an encrypted tar.gz file and a companion shell script. When executed, the shell script prompts the user for a password, which is required to extract the contents of the encrypted tar.gz file.
+3. **encrypt_to_shellscript.sh**: This script generates an encrypted tar.gz file and a companion shell script. When executed, the shell script prompts the user for a password, which is required to extract the contents of the encrypted tar.gz file.
 
 ## License
 
