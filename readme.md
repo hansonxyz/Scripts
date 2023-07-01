@@ -15,11 +15,3 @@ This repository is a collection of the most useful scripts that are used on a da
 This project is licensed under the terms of the MIT license.
 
 For more details, see the license.txt file.
-
-## Contribution
-
-Feel free to contribute to this repository by providing fixes, enhancements, or by suggesting your own scripts. When suggesting a new script, please provide a clear and concise description of what the script does. 
-
-## Contact 
-
-For any inquiries or support, please open a new issue in this repository.
