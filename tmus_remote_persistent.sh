@@ -1,17 +1,7 @@
 #!/bin/bash
 
 # This script creates a new tmux session on a remote server and automatically
-# reattaches to the session if the SSH connection is lost. It takes two required
-# arguments: a username and a server address. An optional third argument can be
-# used to specify initial commands to run in the new tmux session.
-#
-# In addition to the auto-reattach functionality, the script also includes a
-# background task that checks every 10 minutes whether the tmux session has been
-# idle for more than 2 days or has been terminated. If so, it kills the session
-# and exits the background task. This idle timeout functionality is implemented
-# by a background bash process that is started upon the initial connection.
-
-#!/bin/bash
+# reattaches to the session if the SSH connection is lost.
 
 # Check the number of arguments.
 if [ $# -lt 1 ]; then
@@ -27,7 +17,7 @@ if [[ "$1" =~ ^-- ]]; then
 fi
 
 # Check if a session name is provided for the --restore flag.
-if [[ "$FLAG" == "--restore" && "$1" =~ ^[^-] ]]; then
+if [[ "$FLAG" == "--restore" && -n "$1" ]]; then
     RESTORE_SESSION="persistent_$1"
     shift
 fi
@@ -102,18 +92,11 @@ encode_command() {
     echo -n "$1" | base64 -w 0
 }
 
-# The idle timeout task command string
-#IDLE_TIMEOUT_TASK='( sleep 7; while true; do if ! tmux has-session -t '${SESSION}' >/dev/null 2>&1; then exit; fi; if ! tmux list-sessions | grep -q '\''^'${SESSION}':.*\(attached\)'\''; then IDLE_TIME=$(date +%s); fi; if [ -n "$IDLE_TIME" ] && (( $(date +%s) - IDLE_TIME > 604800 )); then tmux kill-session -t '${SESSION}'; exit; fi; sleep 600; done ) & '
-IDLE_TIMEOUT_TASK 'echo no_timeout'
-
-# Base64 encode the command string
-ENCODED_IDLE_TIMEOUT_TASK=$(encode_command "$IDLE_TIMEOUT_TASK")
-
 # Check if the session exists on the server. If it does not, create it.
 EXISTS=$(ssh -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 ${SERVER} "tmux has-session -t ${SESSION} 2>/dev/null")
 
 if [ $? != 0 ]; then
-    ssh -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -t ${SERVER} "echo -e 'setw -g mouse on\\nsetw -g status off' > ~/.tmux.conf; tmux new-session -d -s ${SESSION} '${INITIAL_COMMAND}'; ( echo ${ENCODED_IDLE_TIMEOUT_TASK} | base64 --decode | bash )  "
+    ssh -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -t ${SERVER} "echo -e 'setw -g mouse on\\nsetw -g status off' > ~/.tmux.conf; tmux new-session -d -s ${SESSION} '${INITIAL_COMMAND}' "
 fi
 
 ssh -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -t ${SERVER} "tmux attach-session -t ${SESSION}"
