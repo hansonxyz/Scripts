@@ -2,7 +2,7 @@
 
 This repository is a collection of the most useful scripts that are used on a day-to-day basis. 
 
-## Index 
+## Descriptions 
 
 1. **tmux_remote_persistent.sh**: This script enables connection to a remote Linux system and initializes a tmux session. It provides resilience by automatically reconnecting to the tmux session in case the terminal is unexpectedly disconnected.
 
