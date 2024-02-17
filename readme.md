@@ -21,4 +21,3 @@ This repository is a collection of the most useful scripts that are used on a da
 
 This project is licensed under the terms of the MIT license.
 
-For more details, see the license.txt file.
