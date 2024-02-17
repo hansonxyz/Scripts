@@ -14,6 +14,8 @@ This repository is a collection of the most useful scripts that are used on a da
 
 [**multi_terminal.ps1**](https://github.com/hansonxyz/Scripts/blob/main/multi_terminal.ps1): A powershell script that starts windows terminal and creates multiple persistent terminals using wsl + [**tmux_remote_persistent.sh**](https://github.com/hansonxyz/Scripts/blob/main/tmux_remote_persistent.sh)
 
+[**wgett.sh**](https://github.com/hansonxyz/Scripts/blob/main/multi_terminal.ps1): A bash script which downloads a torrent file to the local directory and exits, in the same manner wget works.
+
 
 ## License
 
