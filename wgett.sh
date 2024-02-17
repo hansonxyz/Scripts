@@ -49,14 +49,14 @@ fi
 # Always attempt to clean up .torrent and .aria2 files
 grep -oP "(?<=Download complete: ).*(?<!\.torrent)$" "$LOG_FILE" | while read -r line; do
     FILENAME=$(basename "$line")
-    rm -f "${FILENAME}."*torrent
-    rm -f "${FILENAME}."*aria2
+    rm -f "${FILENAME}."torrent
+    rm -f "${FILENAME}."aria2
 done
 
 # Always attempt to clean up .torrent and .aria2 files
 grep -oP "(?<=not complete: ).*(?<!\.torrent)$" "$LOG_FILE" | while read -r line; do
     FILENAME=$(basename "$line")
-    rm -f "${FILENAME}."*torrent
+    rm -f "${FILENAME}."torrent
 done
 
 # Exit with success code if all files downloaded successfully, error otherwise
