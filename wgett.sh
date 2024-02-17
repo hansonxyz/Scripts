@@ -4,7 +4,7 @@
 if [ $# -eq 0 ]; then
     echo "Usage: $0 <torrent_file> [aria2c additional options]"
     echo "Download a torrent file similar to how wget functions."
-    echo "aria2c is required to be installed."
+    echo "aria2c is required to be installed.  For added download efficiency, open ports 6921 and 6922 on your firewall."
     exit 1
 fi
 
