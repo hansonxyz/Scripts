@@ -16,8 +16,9 @@ This repository is a collection of the most useful scripts that are used on a da
 
 [**wgett.sh**](https://github.com/hansonxyz/Scripts/blob/main/wgett.sh): A bash script which downloads a torrent file to the local directory and exits, in the same manner wget works.
 
+[**yt-dl.py**](https://github.com/hansonxyz/Scripts/blob/main/yt-dl.py): A python script which invokes docker and pulls the latest version of youtube-dl to download a target youtube video.  Pass argument --mp3 or --x265 to have it convert to either a mp3 or x265 formatted file via ffmpeg via docker.  Requires no dependencies other than python3 and the ability to execute docker via sudo.
 
 ## License
 
-This project is licensed under the terms of the MIT license.
+The scripts in this project are licensed under the terms of the MIT license.
 
