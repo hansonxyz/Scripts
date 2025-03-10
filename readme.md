@@ -14,6 +14,8 @@ This repository is a collection of the most useful scripts that are used on a da
 
 [**multi_terminal.ps1**](https://github.com/hansonxyz/Scripts/blob/main/multi_terminal.ps1): A powershell script that starts windows terminal and creates multiple persistent terminals using wsl + [**tmux_remote_persistent.sh**](https://github.com/hansonxyz/Scripts/blob/main/tmux_remote_persistent.sh)
 
+[**report_active_state_windows_workstation.ps1**](https://github.com/hansonxyz/Scripts/blob/main/report_active_state_windows_workstation.ps1): A powershell script that pulls a web endpoint via web request every 30 seconds while the workstation is in use.  For use with something like home assistant.
+
 [**wgett.sh**](https://github.com/hansonxyz/Scripts/blob/main/wgett.sh): A bash script which downloads a torrent file to the local directory and exits, in the same manner wget works.
 
 [**yt-dl.py**](https://github.com/hansonxyz/Scripts/blob/main/yt-dl.py): A python script which invokes docker and pulls the latest version of youtube-dl to download a target youtube video.  Pass argument --mp3 or --x265 to have it convert to either a mp3 or x265 formatted file via ffmpeg via docker.  Requires no dependencies other than python3 and the ability to execute docker via sudo.
